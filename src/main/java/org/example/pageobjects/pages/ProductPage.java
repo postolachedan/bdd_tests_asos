@@ -1,7 +1,6 @@
 package org.example.pageobjects.pages;
 
 import org.example.pageobjects.BasePage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -16,10 +15,6 @@ public class ProductPage extends BasePage {
     WebElement addedToCartMessage;
     @FindBy(id = "main-size-select-0")
     WebElement sizeSelectDropDown;
-
-    public ProductPage(WebDriver driver) {
-        super(driver);
-    }
 
     public void addToCart() {
         addToBagButton.click();

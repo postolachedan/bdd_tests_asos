@@ -3,7 +3,6 @@ package org.example.pageobjects.pages;
 import org.example.pageobjects.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,10 +18,6 @@ public class HomePage extends BasePage {
     By acceptBtn = By.id("onetrust-accept-btn-handler");
 
     public static final String ASOS_URL = "https://www.asos.com/";
-
-    public HomePage(WebDriver driver) {
-        super(driver);
-    }
 
     public HomePage open() {
         driver.get(ASOS_URL);

@@ -1,7 +1,6 @@
 package org.example.pageobjects.pages;
 
 import org.example.pageobjects.BasePage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -17,12 +16,6 @@ public class LoginPage extends BasePage {
     WebElement emailField;
     @FindBy(id = "Password")
     WebElement passwordField;
-    @FindBy(id = "loginErrorMessage")
-    WebElement loginErrorMessage;
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
-
     public void clickSignIn() {
         signInButton.click();
     }
@@ -41,9 +34,5 @@ public class LoginPage extends BasePage {
 
     public void enterPassword(String password) {
         passwordField.sendKeys(password);
-    }
-
-    public String getLoginErrorMessage() {
-        return loginErrorMessage.getText();
     }
 }

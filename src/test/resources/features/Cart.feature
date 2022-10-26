@@ -2,7 +2,7 @@ Feature: Cart functionality
 
   Background: User is on the home page
     Given User is on the Home Page
-
+  @SmokeTest
   Scenario: Adding a product to the cart without selecting a size should not be allowed
     Given User enters "Nike" in the search field
     When User selects an item

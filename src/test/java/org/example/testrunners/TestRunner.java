@@ -7,7 +7,10 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"org.example"},
-        plugin = "pretty",
+        plugin = {"pretty",
+                "html:target/cucumber-reports/CucumberTests.html",
+                "json:target/cucumber-reports/CucumberTests.json",
+                "junit:target/cucumber-reports/CucumberTests.xml"},
         monochrome = true,
         tags = "@SmokeTest"
 )

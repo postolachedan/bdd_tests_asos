@@ -2,12 +2,11 @@ package org.example.stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.example.drivermanager.DriverManager;
 import org.example.pageobjects.pages.HomePage;
 
 
 public class HomePageSteps {
-    HomePage homePage = new HomePage(DriverManager.getDriver());
+    private final HomePage homePage = new HomePage();
     @Given("User is on Login Page")
     public void openLoginPage() {
         homePage.open()

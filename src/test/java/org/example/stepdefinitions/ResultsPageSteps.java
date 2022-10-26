@@ -2,7 +2,6 @@ package org.example.stepdefinitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.drivermanager.DriverManager;
 import org.example.pageobjects.pages.ResultsPage;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class ResultsPageSteps {
-    ResultsPage resultsPage = new ResultsPage(DriverManager.getDriver());
+    private final ResultsPage resultsPage = new ResultsPage();
     @Then("A list of results is displayed containing {string}")
     public void verifySearchResultsItemNames(String brandName) {
         List<String> searchResults = resultsPage.getSearchResultsNames();
@@ -20,8 +19,8 @@ public class ResultsPageSteps {
     }
 
     @Then("A message is displayed: {string}")
-    public void verifyNoResulsMessage(String message) {
-        assertEquals(resultsPage.getNoResultsMessage(), message);
+    public void verifyNoResulsMessage(String expectedMessage) {
+        assertEquals(resultsPage.getNoResultsMessage(), expectedMessage);
     }
 
     @When("User selects an item")

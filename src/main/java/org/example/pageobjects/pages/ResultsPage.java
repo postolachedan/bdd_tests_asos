@@ -1,7 +1,6 @@
 package org.example.pageobjects.pages;
 
 import org.example.pageobjects.BasePage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,12 +14,6 @@ public class ResultsPage extends BasePage {
     WebElement noResultsLabel;
     @FindBy(xpath = "//a[@class='B36cezB']")
     List<WebElement> searchResults;
-
-
-
-    public ResultsPage(WebDriver driver) {
-        super(driver);
-    }
 
     public List<String> getSearchResultsNames() {
         return results.stream()
