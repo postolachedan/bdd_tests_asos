@@ -2,7 +2,7 @@ Feature: Search asos.com
 
   Scenario: Search with valid input
     Given User is on the Home Page
-    When User enters a brand name: "Nike" in the search field
+    When User enters "Nike" in the search field
     Then A list of results is displayed containing "Nike"
 
   Scenario: Search, no results

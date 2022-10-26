@@ -2,31 +2,26 @@ package org.example.stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
+import org.example.drivermanager.DriverManager;
 import org.example.pageobjects.pages.HomePage;
 
-import static org.example.stepdefinitions.Hooks.driver;
 
 public class HomePageSteps {
-    HomePage homePage = new HomePage(driver);
+    HomePage homePage = new HomePage(DriverManager.getDriver());
     @Given("User is on Login Page")
-    public void userIsOnLoginPage() {
+    public void openLoginPage() {
         homePage.open()
                 .clickAccountButton()
                 .clickSignInLink();
     }
 
     @Given("User is on the Home Page")
-    public void userIsOnTheHomePage() {
+    public void openHomePage() {
         homePage.open();
     }
 
-    @When("User enters a brand name: {string} in the search field")
-    public void userEntersABrandNameInTheSearchField(String brandName) {
-        homePage.searchForItem(brandName);
-    }
-
     @When("User enters {string} in the search field")
-    public void userEntersInTheSearchField(String searchInput) {
+    public void search(String searchInput) {
         homePage.searchForItem(searchInput);
     }
 }

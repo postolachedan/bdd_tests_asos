@@ -6,8 +6,10 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"org.example.stepdefinitions"},
-        plugin = {"pretty"}
+        glue = {"org.example"},
+        plugin = "pretty",
+        monochrome = true,
+        tags = "@SmokeTest"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 }
