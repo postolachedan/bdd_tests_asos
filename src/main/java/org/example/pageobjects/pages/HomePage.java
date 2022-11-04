@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class HomePage extends BasePage {
-    @FindBy(xpath = "//span[@type='accountHalloweenUnfilled']")
+    @FindBy(xpath = "//span[@type='accountUnfilled']")
     WebElement accountButton;
     @FindBy(id = "chrome-search")
     WebElement searchField;
